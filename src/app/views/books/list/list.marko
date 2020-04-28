@@ -1,0 +1,23 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+  <h1>Listagem de livros</h1>
+
+  <table>
+    <thead>
+      <th>ID</th>
+      <th>Título</th>
+    </thead>
+    <tbody>
+      <tr for (livro in data.livros)>
+        <td>${livro.id}</td>
+        <td>${livro.titulo}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
