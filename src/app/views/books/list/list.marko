@@ -6,18 +6,24 @@
 
   <h1>Listagem de livros</h1>
 
-  <table>
-    <thead>
-      <th>ID</th>
-      <th>Título</th>
-    </thead>
-    <tbody>
-      <tr for (livro in data.livros)>
-        <td>${livro.id}</td>
-        <td>${livro.titulo}</td>
-      </tr>
-    </tbody>
+  <table id="livros">
+    <tr>
+      <td>ID</td>
+      <td>Título</td>
+      <td>Preço</td>
+      <td>Editar</td>
+      <td>Remover</td>
+    </tr>
+    <tr id="livro_${livro.id}" for (livro in data.livros)> 
+      <td>${livro.id}</td>
+      <td>${livro.titulo}</td>
+      <td>${livro.preco.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</td>
+      <td><a href="/livros/form/${livro.id}">Editar</a></td>
+      <td><a href="#" data-ref="${livro.id}" data-type="remocao">Remover</a></td> 
+    </tr>
   </table>
+
+  <script src="/estatico/js/remove-livro.js"></script>
 
 </body>
 </html>
